@@ -6,8 +6,8 @@ class Heap<T> {
   private readonly compare: (x: T, y: T) => number;
 
   public constructor(array: T[], comparator: (x: T, y: T) => number) {
-    this.heap = array;
-    this.size = array.length;
+    this.heap = array.slice();
+    this.size = this.heap.length;
     this.compare = comparator;
     let i = Math.floor((this.size - 1) / 2);
     while (i >= 0) {

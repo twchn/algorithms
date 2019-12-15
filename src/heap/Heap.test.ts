@@ -1,25 +1,27 @@
 import Heap from './Heap';
 
 test('build a max heap', () => {
+  const rawArray = [2, 5, 6, 1, 9, 0, 0];
   const maxHeap = new Heap(
-    [2, 5, 6, 1, 9, 0, 0],
+    rawArray,
     (x: number, y: number): number => y - x
   );
   const result = [];
   while (maxHeap.size > 0) {
     result.push(maxHeap.pop());
   }
-  expect(result).toEqual([9, 6, 5, 2, 1, 0, 0]);
+  expect(result).toEqual(rawArray.sort((x, y) => y - x));
 });
 
 test('build a min heap', () => {
+  const rawArray = [3, 6, 1, 4, 5, 2, 9, 0, 2];
   const minHeap = new Heap(
-    [3, 6, 1, 4, 5, 2, 9, 0, 2],
+    rawArray,
     (x: number, y: number): number => x - y
   );
   const result = [];
   while (minHeap.size > 0) {
     result.push(minHeap.pop());
   }
-  expect(result).toEqual([0, 1, 2, 2, 3, 4, 5, 6, 9]);
+  expect(result).toEqual(rawArray.sort((x, y) => x - y));
 });
