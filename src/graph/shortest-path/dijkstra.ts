@@ -1,7 +1,7 @@
 import Heap from '../../heap/Heap';
 import WeightedGraph from '../WeightedGraph';
 
-function dijkstra(graph: WeightedGraph, source: number) {
+function dijkstra(graph: WeightedGraph, source: number): Map<number, number> {
   const pq = new Heap([], (x: number[], y: number[]): number => x[0] - y[0]); // min heap
 
   pq.push([0, source]);

@@ -26,6 +26,7 @@
     "no-plusplus": "off",
     "no-param-reassign": "off",
     "no-bitwise": "off",
+    "no-continue": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
